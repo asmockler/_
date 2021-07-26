@@ -11,7 +11,23 @@ chrome.storage.sync.get([STORAGE_KEY], function (result) {
   );
 
   if (shouldBlockSite) {
-    document.body.style.display = 'none';
+    document.body.innerHTML = `
+      <div style="
+        align-items: center;
+        box-sizing: border-box;
+        color: tomato;
+        display: flex;
+        font-family: sans-serif;
+        font-size: 48px;
+        font-weight: bold;
+        height: 100vh;
+        justify-content: center;
+        padding: 50px;
+        width: 100%;
+      ">
+        <p>Do something else!</p>
+      </div>
+    `
   }
 });
 
